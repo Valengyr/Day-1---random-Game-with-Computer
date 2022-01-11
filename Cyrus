@@ -1,0 +1,21 @@
+ import random
+
+Answer = int(input("Choose your answer: "))
+a = 1
+b = 99 
+Computer_Guess = random.randint(a,b)
+print ("Computer had a guess = ",Computer_Guess)
+while Computer_Guess != Answer:
+    if Computer_Guess > Answer :
+        print ("You need to guess between", a , 'and', Computer_Guess)
+        b = Computer_Guess
+        a = a
+        Computer_Guess = random.randint(a,b)
+        print ("Computer had a guess = ",Computer_Guess)
+    elif Computer_Guess < Answer:
+        print ('You need to guess between', Computer_Guess , 'and', b)
+        b = b   
+        a = Computer_Guess
+        Computer_Guess = random.randint(a,b)
+        print ("Computer had a guess = ",Computer_Guess)
+print ('You Won')
